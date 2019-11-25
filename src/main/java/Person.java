@@ -23,6 +23,14 @@ public class Person {
         this.emailAddress = emailAddress;
     }
 
+    public Person(){
+        this.age = null;
+        this.name = null;
+        this.birthday = null;
+        this.gender = null;
+        this.emailAddress = null;
+    }
+
     public int getAge() {
         return this.age;
     }
@@ -31,14 +39,14 @@ public class Person {
         return this.name;
     }
 
-    public void printPerson(String name, int age) {
-        System.out.print(name + " is older than " + age);
+    private void printPerson(String message) {
+        System.out.print(message);
     }
 
     public static void printPersonsOlderThan(List<Person> roster, int age) {
         for (Person p : roster) {
             if (p.getAge() >= age) {
-                p.printPerson(p.getName(), p.getAge());
+                p.printPerson(p.getName() + " is older than " + age);
             }
         }
     }
