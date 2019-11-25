@@ -11,7 +11,7 @@ public class PersonTest {
     @Test
     public void getAge() {
 
-        Person testPerson = new Person("Joe",null,42,null, Person.Sex.FEMALE);
+        Person testPerson = new Person("Joe",null,42,null, Person.Sex.MALE);
 
         Integer expected = 42;
         Integer actual = testPerson.getAge();
@@ -21,6 +21,12 @@ public class PersonTest {
 
     @Test
     public void getName() {
+        Person testPerson = new Person("Joe",null,42,null, Person.Sex.MALE);
+
+        String expected = "Joe";
+        String actual = testPerson.getName();
+
+        Assert.assertEquals(expected,actual);
     }
 
     @Test
