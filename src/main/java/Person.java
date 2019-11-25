@@ -43,10 +43,10 @@ public class Person {
         System.out.print(message);
     }
 
-    public static void printPersonsOlderThan(List<Person> roster, int age) {
+    public static void printPersonsWithinAgeRange(List<Person> roster, int low, int high) {
         for (Person p : roster) {
-            if (p.getAge() >= age) {
-                p.printPerson(p.getName() + " is older than " + age);
+            if (low <= p.getAge() && p.getAge() < high) {
+                p.printPerson(p.getName() + " is within " + low + " and " + high);
             }
         }
     }

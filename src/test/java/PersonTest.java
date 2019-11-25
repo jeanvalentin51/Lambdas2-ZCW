@@ -33,7 +33,7 @@ public class PersonTest {
     }
 
     @Test
-    public void printPersonsOlderThan() {
+    public void testprintPersonsWithinAgeRange() {
         Person person1 = new Person("Joe",null,42,null, Person.Sex.MALE);
         Person person2 = new Person("John",null,24,null, Person.Sex.MALE);
         Person testPerson = new Person();
@@ -42,7 +42,7 @@ public class PersonTest {
         testList.add(person1);
         testList.add(person2);
 
-        testPerson.printPersonsOlderThan(testList,28);
+        testPerson.printPersonsWithinAgeRange(testList,28,50);
 
 
     }
