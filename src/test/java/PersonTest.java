@@ -33,16 +33,29 @@ public class PersonTest {
     }
 
     @Test
-    public void printPersonsOlderThan() {
-        Person person1 = new Person("Joe",null,42,null, Person.Sex.MALE);
-        Person person2 = new Person("John",null,24,null, Person.Sex.MALE);
-        Person testPerson = new Person();
+    public void lambdaSearch() {
+        Person person1 = new Person("Joe",null,24,null, Person.Sex.MALE);
+        Person person2 = new Person("Jane",null,35,null, Person.Sex.FEMALE);
 
         List<Person> testList = new ArrayList<>();
         testList.add(person1);
         testList.add(person2);
 
-        testPerson.printPersonsOlderThan(testList,28);
+        Search.lambdaSearch(testList, 26);
+
+    }
+
+    @Test
+    public void printPersons() {
+        Person person1 = new Person("Joe",null,24,null, Person.Sex.MALE);
+        Person person2 = new Person("Jane",null,35,null, Person.Sex.FEMALE);
+
+        List<Person> testList = new ArrayList<>();
+        testList.add(person1);
+        testList.add(person2);
+
+        Search.printPersons(testList, person2);
+
 
 
     }

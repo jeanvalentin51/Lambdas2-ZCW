@@ -1,7 +1,9 @@
 import java.time.LocalDate;
 import java.util.List;
 
-public class Person {
+public class Person implements CheckPerson{
+
+
 
     public enum Sex {
         MALE, FEMALE
@@ -39,18 +41,14 @@ public class Person {
         return this.name;
     }
 
-    private void printPerson(String message) {
+    public void printPerson(String message) {
         System.out.print(message);
     }
 
-    public static void printPersonsOlderThan(List<Person> roster, int age) {
-        for (Person p : roster) {
-            if (p.getAge() >= age) {
-                p.printPerson(p.getName() + " is older than " + age);
-            }
-        }
+
+    @Override
+    public boolean test(Person p) {
+        return p.gender.equals(Sex.MALE);
     }
-
-
 
 }
